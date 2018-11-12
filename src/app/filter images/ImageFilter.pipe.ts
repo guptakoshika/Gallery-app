@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from "@angular/core";
     name: 'imageFilter'
   })
 
-  export class ImageFilter implements PipeTransform{
+  export class ImageFilterPipe implements PipeTransform{
     transform(value: any[], method:string) {
       if(method === 'all'){ 
         return value;
