@@ -1,0 +1,36 @@
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 14px 40px;
+}
+
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: #f44336;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+ul { padding:0; width:1200px; margin:20px auto}
+
+li { display:inline;}
+
+    .tn{
+ margin:6px 6px;
+ border: 4px solid #eee;
+ box-shadow:#555 1px 1px 8px 1px;
+ cursor: pointer
+    }
+    
+.modal-content {
+  width: 1200px !important;
+}
+
+h1, h2{
+    margin-bottom: 20px;
+}
