@@ -6,9 +6,11 @@ import { DetailpageComponent } from './detailpage/detailpage.component';
 
 
 const routes: Routes = [
-  { path: "gallery", component:HeaderComponent },
-  {path: "images/:id",component: DetailpageComponent},
-  {path:"**",component:ErrorpageComponent}
+  
+  { path: 'gallery', component:HeaderComponent },
+  {path:'' , redirectTo:'/gallery',pathMatch:'full'},
+  {path: 'image/:id',component: DetailpageComponent},
+  {path:'**',component:ErrorpageComponent}
 ];
 
 @NgModule({
