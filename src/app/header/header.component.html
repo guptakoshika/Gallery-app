@@ -1,19 +1,29 @@
 <html>
-<head>
-  </head>
-  <body>
-<button class="button"  (click) = "filterBy='all'">All</button>
-<button class="button button2"  (click) = "filterBy='boats'">Boats</button>
-<button class="button button3"  (click) = "filterBy='camping'" >Camping</button>
-<button class="button button4"(click) = "filterBy='library'" >Library</button>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">Gallery</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <button class="w3-bar-item w3-button" (click) = "gotohome()">Home</button>
+      <button class="w3-bar-item w3-button" (click) = "changepics('all')">All pictures</button>
+      <button class="w3-bar-item w3-button" (click) = "changepics('boats')" >Boats</button>
+      <button class="w3-bar-item w3-button" (click) = "changepics('camping')" >camping</button>
+      <button class="w3-bar-item w3-button" (click) = "changepics('library')" >Library</button>
+    </div>
+  </div>
+</div>
+  
 <ul id="thumbnailsList">
   <li *ngFor=" let image of ( visibleImages | imageFilter:filterBy) " >
     <a [routerLink]="['/image', image.id]">
         <img src="{{image.url}}"  class="tn" width="200" height="160">
+     
       </a>
-      
-</li>
-</ul>
+</li></ul>
+
 
 </body>
 </html>
