@@ -1,0 +1,44 @@
+<html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">Gallery</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <button class="w3-bar-item w3-button">Home</button>
+      <button class="w3-bar-item w3-button" (click) = "buttonclicked('all')">All pictures</button>
+      <button class="w3-bar-item w3-button" (click) = "buttonclicked('boats')" >Boats</button>
+      <button class="w3-bar-item w3-button" (click) = "buttonclicked('camping')" >camping</button>
+      <button class="w3-bar-item w3-button" (click) = "buttonclicked('Library')" >Library</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="assets/img/screenshot-5.png" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+  </div>
+</header>
+
+  <!-- Menu Section -->
+  <div class="w3-row w3-padding-64" >
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">ABOUT</h1><br>
+      <ul>
+        <li *ngFor="let data of (content) ">
+             <h2>{{data.name}}</h2>
+             <p  class="w3-text-grey m">{{data.content}}</p>
+        </li>
+        </ul>
+    </div>
+        <div class="w3-col l6 w3-padding-large">
+          <img src="assets/img/aboutpic.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+</body>
+</html>
