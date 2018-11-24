@@ -1,5 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { ImageService } from '../filter/image.service';
+import { ContentProvider } from '../filter/Contentprovider';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,12 +10,32 @@ import { ImageService } from '../filter/image.service';
 })
 export class HeaderComponent implements OnInit {
 
-  filterBy: string = 'all'
+  filterBy;
   visibleImages  = []; 
 
-  constructor(private imageService : ImageService) {}
+  contentFilter: string='all';
+  content = [];
+  
 
+  constructor(private imageService : ImageService , 
+    private contentprovider : ContentProvider , private router : Router , 
+    private activated_router : ActivatedRoute ) {
+      this.activated_router.paramMap.subscribe((params:ParamMap)=>
+      {
+        this.filterBy = params.get('filter');
+      });
+      this.content  = this.contentprovider.getcontent();
+    }
+
+    gotohome(){
+        this.router.navigate(['/gallery']);
+    }
+    changepics( filter ){
+      this.filterBy = filter;
+      this.router.navigate(['/gallery' , filter]);
+    }
   ngOnInit(): void {
-    this.imageService.getImages().subscribe(data => this.visibleImages = data);
+    this.imageService.getImages().subscribe(data => this.visibleImages = data);   
+    console.log("we are in header " + this.contentFilter);
   }
 }
